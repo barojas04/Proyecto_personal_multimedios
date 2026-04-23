@@ -118,4 +118,28 @@ const solicitarViaje = () => {
 .cta-button:active {
   transform: translateY(0); /* Vuelve a su lugar al hacer clic */
 }
+
+/* === MEDIA QUERIES PARA MÓVILES (Max 768px) === */
+@media (max-width: 768px) {
+  .hero-content {
+    /* Agregamos padding extra a los lados para que respire */
+    padding: 0 15px;
+  }
+  
+  .title {
+    font-size: 2.2rem; /* Tamaño mucho más manejable en pantallas pequeñas */
+  }
+
+  .subtitle {
+    font-size: 1.1rem; /* Subtítulo adaptado */
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+    max-width: 300px; /* Límite para que no se vea exagerado */
+  }
+}
 </style>
