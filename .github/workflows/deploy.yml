@@ -24,14 +24,16 @@ jobs:
           node-version: 20
       - name: Instalar dependencias
         run: npm install
+        working-directory: ./Proyecto_personal_multimedios
       - name: Construir proyecto
         run: npm run build
+        working-directory: ./Proyecto_personal_multimedios
       - name: Configurar Pages
         uses: actions/configure-pages@v4
       - name: Subir archivos
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './Proyecto_personal_multimedios/dist'
       - name: Desplegar a GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
