@@ -1,38 +1,44 @@
-# .
+# Taxi y Express Luis Rojas
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicación web moderna para un servicio de transporte y mensajería 24/7 en Santa Cruz, Guanacaste. Basada en el servicio de taxi de mi padre.
 
-## Recommended IDE Setup
+##  Framework y Tecnologías Utilizadas
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Este proyecto fue desarrollado utilizando **Vue 3** mediante la **Composition API** (`<script setup>`).
+Se utilizó **Vite** como herramienta de construcción y empaquetado (bundler) para brindar una experiencia de desarrollo rápida y optimizada.
 
-## Recommended Browser Setup
+##  Cómo correr el programa
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Para ejecutar este proyecto de forma local en la computadora, sigue estos pasos:
 
-## Customize configuration
+1. **Abra una terminal** en la carpeta raíz del proyecto (donde se encuentra este archivo `README.md`).
+2. **Instala las dependencias** ejecutando el siguiente comando:
+   ```bash
+   npm install
+   ```
+3. **Inicia el servidor de desarrollo** con el comando:
+   ```bash
+   npm run dev
+   ```
+4. **Abrir el navegador** y visite la dirección local que te muestra la terminal (generalmente `http://localhost:5173/`).
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+##  Vistas de la Aplicación
 
-## Project Setup
+A continuación, se presentan algunas capturas de las diferentes secciones del proyecto:
 
-```sh
-npm install
-```
+### Inicio
+![Inicio](./public/screenshots/inicio.png)
 
-### Compile and Hot-Reload for Development
+### Nuestra Flota
+![Flota](./public/screenshots/flota.png)
 
-```sh
-npm run dev
-```
+### Cobertura Nacional
+![Cobertura Nacional](./public/screenshots/cobertura.png)
 
-### Compile and Minify for Production
+### Experiencias (Testimonios)
+![Experiencias](./public/screenshots/testimonios.png)
 
-```sh
-npm run build
-```
+### Contacto y Reservas
+![Contacto](./public/screenshots/reserva.png)
+
+
