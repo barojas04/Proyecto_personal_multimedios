@@ -1,0 +1,42 @@
+{
+  "testimonios": [
+    {
+      "nombre": "Carlos Méndez",
+      "rol": "Ejecutivo de Ventas",
+      "texto": "Un servicio verdaderamente premium. Los vehículos son impecables y la puntualidad es absoluta. Altamente recomendado para viajes corporativos.",
+      "audio": "audio2.mp3"
+    },
+    {
+      "nombre": "Laura Gutiérrez",
+      "rol": "Turista",
+      "texto": "Nuestro traslado desde el Aeropuerto de Liberia hasta Tamarindo fue perfecto. El chofer fue muy amable y el auto muy cómodo.",
+      "audio": "audio1.mp3"
+    },
+    {
+      "nombre": "Andrés Rojas",
+      "rol": "Empresario Local",
+      "texto": "Uso el servicio express para mis entregas importantes. Nunca me han fallado, son rápidos y 100% seguros con los paquetes.",
+      "audio": ""
+    }
+  ],
+  "destinosImages": {
+    "playas": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1506501139174-099022df5260?auto=format&fit=crop&w=800&q=80"
+    ],
+    "sanjose": [
+      "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=800&q=80"
+    ],
+    "santacruz": [
+      "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1465146344425-f00d5f2c8f07?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80"
+    ]
+  }
+}

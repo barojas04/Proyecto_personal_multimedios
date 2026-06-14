@@ -11,8 +11,8 @@
               <h4>{{ testimonio.nombre }}</h4>
               <span>{{ testimonio.rol }}</span>
             </div>
-            <div class="audio-player">
-              <audio :id="'audio-' + index" :src="testimonio.audio"></audio>
+            <div class="audio-player" v-if="testimonio.audio && testimonio.audio !== ''">
+              <audio :id="'audio-' + index" :src="testimonio.audio.startsWith('http') ? testimonio.audio : baseUrl + testimonio.audio"></audio>
               <button class="play-btn" @click="toggleAudio(index)" :class="{ playing: playingIndex === index }">
                 <svg v-if="playingIndex !== index" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 <svg v-else viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
@@ -26,28 +26,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-const testimonios = [
-  {
-    nombre: "Carlos Méndez",
-    rol: "Ejecutivo de Ventas",
-    texto: "Un servicio verdaderamente premium. Los vehículos son impecables y la puntualidad es absoluta. Altamente recomendado para viajes corporativos.",
-    audio: "https://www.w3schools.com/html/horse.mp3"
-  },
-  {
-    nombre: "Laura Gutiérrez",
-    rol: "Turista",
-    texto: "Nuestro traslado desde el Aeropuerto de Liberia hasta Tamarindo fue perfecto. El chofer fue muy amable y el auto muy cómodo.",
-    audio: "https://www.w3schools.com/html/horse.mp3"
-  },
-  {
-    nombre: "Andrés Rojas",
-    rol: "Empresario Local",
-    texto: "Uso el servicio express para mis entregas importantes. Nunca me han fallado, son rápidos y 100% seguros con los paquetes.",
-    audio: "https://www.w3schools.com/html/horse.mp3"
+const testimonios = ref([]);
+const baseUrl = import.meta.env.BASE_URL;
+
+onMounted(async () => {
+  try {
+    const response = await fetch(baseUrl + 'data.json');
+    const data = await response.json();
+    testimonios.value = data.testimonios;
+  } catch (error) {
+    console.error('Error cargando testimonios:', error);
   }
-];
+});
 
 const playingIndex = ref(null);
 
@@ -62,7 +54,11 @@ const toggleAudio = (index) => {
     allAudios.forEach(a => a.pause());
     playingIndex.value = index;
     const audio = document.getElementById('audio-' + index);
-    audio.play();
+    audio.play().catch(e => {
+      console.error("Error al reproducir audio:", e);
+      playingIndex.value = null;
+      alert("Error al intentar reproducir el audio. Verifica que el archivo exista y el navegador lo soporte.");
+    });
     
     audio.onended = () => {
       playingIndex.value = null;

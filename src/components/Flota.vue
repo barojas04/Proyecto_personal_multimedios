@@ -5,19 +5,19 @@
       <div class="grid-flota">
         <div class="gallery-card">
           <div class="image-wrapper">
-            <img src="/taxi_sedan.png" alt="Taxi Ejecutivo" class="gallery-img" />
+            <img src="/imagen_carro.jpg" alt="Taxi Ejecutivo" class="gallery-img" />
             <div class="card-overlay">
               <span class="extra-info">Capacidad: 4 personas<br>Asientos de Cuero</span>
             </div>
           </div>
           <div class="card-content">
-            <h3>Taxi Ejecutivo</h3>
-            <p>Unidades modernas, cómodas y climatizadas para su viaje personal o corporativo.</p>
+            <h3>Taxi de calidad</h3>
+            <p>Unidad moderna, cómoda y climatizadas para su viaje personal o corporativo.</p>
           </div>
         </div>
         <div class="gallery-card">
           <div class="image-wrapper">
-            <img src="/express_moto.png" alt="Servicio Express" class="gallery-img" />
+            <img src="/express.png" alt="Servicio Express" class="gallery-img" />
             <div class="card-overlay">
               <span class="extra-info">Entrega Express &lt; 30min<br>100% Seguro</span>
             </div>

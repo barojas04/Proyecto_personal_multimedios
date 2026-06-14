@@ -12,7 +12,7 @@
 
     <ul class="nav-links" :class="{ 'nav-active': isMenuOpen }">
       <li><a href="#inicio" @click="closeMenu">Inicio</a></li>
-      <li><a href="#servicios" @click="closeMenu">Servicios</a></li>
+      <li><a href="#destinos" @click="closeMenu">Servicios</a></li>
       <li><a href="#flota" @click="closeMenu">Flota</a></li>
       <li><a href="#testimonios" @click="closeMenu">Testimonios</a></li>
       <li><a href="#contacto" @click="closeMenu">Contacto</a></li>

@@ -7,7 +7,7 @@
           <p class="contacto-desc">Viaja con seguridad, puntualidad y estilo. Llena el formulario o contáctanos directamente para coordinar tu próximo destino.</p>
           <ul class="info-list">
             <li><strong>📍 Base:</strong> Santa Cruz, Guanacaste</li>
-            <li><strong>📞 Teléfono:</strong> +506 8888-8888</li>
+            <li><strong>📞 Teléfono:</strong> +506 8523-0776</li>
             <li><strong>🕒 Horario:</strong> 24/7 Disponible</li>
           </ul>
         </div>
@@ -15,15 +15,18 @@
           <form @submit.prevent="enviarWhatsApp" class="contacto-form">
             <div class="form-group">
               <label for="nombre">Nombre Completo</label>
-              <input type="text" id="nombre" v-model="form.nombre" required placeholder="Ej: Juan Pérez" />
+              <input type="text" id="nombre" v-model="form.nombre" placeholder="Ej: Juan Pérez" :class="{'input-error': errores.nombre}" />
+              <span v-if="errores.nombre" class="error-msg">{{ errores.nombre }}</span>
             </div>
             <div class="form-group">
               <label for="telefono">Teléfono</label>
-              <input type="tel" id="telefono" v-model="form.telefono" required placeholder="Ej: 8888 8888" />
+              <input type="tel" id="telefono" v-model="form.telefono" placeholder="Ej: 8888 8888" :class="{'input-error': errores.telefono}" />
+              <span v-if="errores.telefono" class="error-msg">{{ errores.telefono }}</span>
             </div>
             <div class="form-group">
               <label for="destino">¿A dónde viaja?</label>
-              <input type="text" id="destino" v-model="form.destino" required placeholder="Ej: Aeropuerto Liberia" />
+              <input type="text" id="destino" v-model="form.destino" placeholder="Ej: Aeropuerto Liberia" :class="{'input-error': errores.destino}" />
+              <span v-if="errores.destino" class="error-msg">{{ errores.destino }}</span>
             </div>
             <button type="submit" class="submit-btn">
               Reservar por WhatsApp
@@ -45,7 +48,45 @@ const form = reactive({
   destino: ''
 });
 
+const errores = reactive({
+  nombre: '',
+  telefono: '',
+  destino: ''
+});
+
+const validarFormulario = () => {
+  let esValido = true;
+  
+  if (form.nombre.trim().length < 3) {
+    errores.nombre = 'El nombre debe tener al menos 3 caracteres.';
+    esValido = false;
+  } else {
+    errores.nombre = '';
+  }
+
+  const phoneRegex = /^[0-9\-\s]{8,15}$/;
+  if (!phoneRegex.test(form.telefono)) {
+    errores.telefono = 'Ingrese un número de teléfono válido (mínimo 8 dígitos).';
+    esValido = false;
+  } else {
+    errores.telefono = '';
+  }
+
+  if (form.destino.trim().length < 4) {
+    errores.destino = 'Especifique un destino válido.';
+    esValido = false;
+  } else {
+    errores.destino = '';
+  }
+
+  return esValido;
+};
+
 const enviarWhatsApp = () => {
+  if (!validarFormulario()) {
+    return;
+  }
+
   const numero = '50688888888';
   const mensaje = `Hola Luis Rojas, me gustaría reservar un viaje.%0A%0A*Nombre:* ${form.nombre}%0A*Teléfono:* ${form.telefono}%0A*Destino:* ${form.destino}%0A%0A¡Quedo a la espera de confirmación!`;
   const url = `https://wa.me/${numero}?text=${mensaje}`;
@@ -71,6 +112,8 @@ const enviarWhatsApp = () => {
 .form-group label { display: block; margin-bottom: 0.8rem; color: #DDD; font-size: 1rem; font-weight: 400; letter-spacing: 0.5px; }
 .form-group input { width: 100%; padding: 16px; background-color: #111; border: 1px solid #333; border-radius: 8px; color: #FFF; font-size: 1.1rem; font-family: 'Poppins', sans-serif; transition: all 0.4s ease; box-sizing: border-box; }
 .form-group input:focus { outline: none; border-color: #D4AF37; background-color: #1a1a1a; box-shadow: 0 0 10px rgba(212,175,55,0.2); }
+.input-error { border-color: #ff4d4f !important; }
+.error-msg { color: #ff4d4f; font-size: 0.85rem; margin-top: 0.5rem; display: block; }
 .submit-btn { width: 100%; background-color: #D4AF37; color: #000; border: none; padding: 18px; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; border-radius: 8px; cursor: pointer; transition: all 0.4s ease; display: flex; align-items: center; justify-content: center; gap: 12px; text-transform: uppercase; box-shadow: 0 8px 20px rgba(212,175,55,0.3); }
 .submit-btn:hover { background-color: #FFF; color: #000; transform: translateY(-3px); box-shadow: 0 12px 25px rgba(255,255,255,0.2); }
 </style>
