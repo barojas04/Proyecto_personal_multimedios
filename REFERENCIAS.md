@@ -10,8 +10,8 @@ Para este proyecto se eligió **Vue 3**. Se utilizó la **Composition API** (`<s
 ## 3. Recursos Multimedia Utilizados
 - **Video Hero**: Video de fondo utilizado en la sección inicial. Descargado de **Pexels**, bajo licencia gratuita. [https://videos.pexels.com/video-files/3163534/3163534-uhd_2560_1440_30fps.mp4](https://videos.pexels.com/video-files/3163534/3163534-uhd_2560_1440_30fps.mp4)
 - **Imágenes de Destinos**: Imágenes de demostración obtenidas de **Unsplash**, bajo licencia libre (Unsplash License).
-- **Imágenes Decorativas**: Imágenes png `imagen_carro.png`, `express.png` de uso gratuito.
+- **Imágenes Decorativas**: Imágenes png `imagen_carro.png`, `express.png` de uso gratuito, la imagen del carro es del carro real de mi padre.
 
 
 ## 4. Uso de Inteligencia Artificial
-- Se utilizó la herramienta **Google Gemini (Antigravity IDE)** como asistente para entender los requisitos de la rúbrica y ayudar a estructurar la carga de datos con JSON (`fetch`) y la validación del formulario. El código generado fue revisado y comprendido en su totalidad para poder explicar su funcionamiento en caso de ser necesario.
+- Se utilizó la herramienta **Google Gemini (Antigravity IDE)** como asistente para entender los requisitos de la rúbrica y ayudar a estructurar la carga de datos con JSON (`fetch`) y la validación del formulario. Además de ayuda en ciertas partes de como poner el video y ayudó a ser guía en la creación del proyecto.
